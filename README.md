@@ -4,10 +4,6 @@
 <h4 align="center"> View the live project <a href="https://statuslive.netlify.com/"> here </a></h4>
 <h4 align="center"> View the live API <a href="https://statuslive.herokuapp.com/boards"> here </a></h4>
  <br>
-<p align="center">
-<img src="https://media.giphy.com/media/huDymbVWlPdrSDCa1u/giphy.gif" width="70%">
-</p>
-
   
 ## Clone the source locally
 
