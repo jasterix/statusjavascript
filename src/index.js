@@ -117,7 +117,7 @@ saveBoard.addEventListener('submit', (event) => {
     else {
 
   alert("thou hath chosen a strong name")
-    // }
+    }
 
   })
 
