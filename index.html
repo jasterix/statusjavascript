@@ -9,11 +9,10 @@
   <title>Status</title>
 </head>
 
-<div <h1 style="font-size: 60px; color: rebeccapurple; text-align: center; margin-top: 80px; margin-bottom: 60px; font-family: 'Alfa Slab One' cursive; line-height:1.5em;">
-  <br>
-<b>  HTTP Status GIF'er</b>
-
-<br>
+<div style="color: rebeccapurple; text-align: center; margin-top: 40px; margin-bottom: 40px; font-family: 'Alfa Slab One' cursive; line-height:1em;">
+  <h1 style="font-size: 60px">Status Live</h1>
+  <br style="line-height: 0.5em">
+<p style="font-size: 20px"><em>Click on a tile to generate a new GIF for that status code</em></p>
 </div>
 
 <body>
@@ -21,10 +20,9 @@
   <!-- ////hidden form -->
   <container class="saveBoard-container" style="display: none">
     <form class="save-board-form ui raised very padded text container segment">
-      <h2>Save your board!!</h2><br>
+      <h2>Save your GIFS to a board</h2><br>
       <input id="boardname" type="text" name="name" value="" placeholder="Enter a name for this board..." class="input-text">
-      <br>
-      <input type="text" name="urls" value="" placeholder="Enter your username..." class="input-text">
+
       <br>
       <input type="submit" name="submit" value="Save name" class="submit">
     </form>
@@ -32,7 +30,6 @@
 
   <!-- ////////////////////////////BEGINNING OF DISPLAY DIV-->
   <div id="saveth">
-
     <h2><button id='new-board-btn'>Saveth thou board!</button></h2>
     <br>
   </div>
@@ -137,9 +134,9 @@
 
     <div class="bottom">
 
-      <div class="savedBoards">
+      <!-- <div class="savedBoards">
 
-      </div>
+      </div> -->
 
       <main id="status-container">
         <!-- <div class = "ui four column doubling stackable grid container"> -->

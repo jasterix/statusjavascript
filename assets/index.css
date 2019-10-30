@@ -11,8 +11,8 @@ html {
 .ui.medium.image {
   width: 300px;
   height: 300px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   font-size: 1rem;
 }
 
@@ -22,12 +22,12 @@ html {
 }
 
 .sidebar {
-  width: 14%;
+  width: 15%;
   line-height: 2em;
   border-radius: 10px;
   background-color: white;
   border: 1px solid rgba(113,113,113,.8);
-  margin: 10px 0 0 10px;
+  margin: 10px 10px 0 20px;
   padding: 10px;
   float: left;
   height: 800px;
@@ -72,13 +72,10 @@ li:hover {
 }
 
 .cardContainer {
-  /* float: left; */
   background-color: rgba(251, 247, 236, .5);
-  width: 72%;
+  width: 80%;
   height:1200px;
-  float: none;
   overflow: scroll;
-  /* width: fit-content; */
 }
 
 ::-webkit-scrollbar {

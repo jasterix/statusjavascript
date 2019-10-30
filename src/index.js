@@ -10,7 +10,7 @@ let addBoard = false;
 let apiUrl= "https://statuslive.herokuapp.com/"
 
 function displaySaved(){
-  fetch(`apiUrl/boards`)
+  fetch(`${apiUrl}/boards`)
     .then(resp => resp.json())
     .then(boards => {
       let new_arr = boards.data
@@ -67,8 +67,8 @@ search.forEach(statusCode => {
   })
 })
 
-
 fetch("http://localhost:3000/boards")
+// fetch(`${apiUrl}/boards`)
   .then(resp => resp.json())
   .then(boards => {
     let new_arr = boards.data
@@ -81,19 +81,19 @@ fetch("http://localhost:3000/boards")
 saveBoard.addEventListener('submit', (event) => {
   event.preventDefault()
   let boardName = document.querySelector("#boardname").value
-
+  console.log(boardName)
 
   ///////////SAVE THE URLS TO A LIST//////////////////////////////
   let boardUrls = []
   let urlTags = document.querySelectorAll(".img")
   urlTags.forEach(url => {
     boardUrls.push(url.src)
-
   })
 
 
+
   //////////////////////////////SAVE THE CURRENT BOARD//////////////////////
-  fetch("http://localhost:3000/boards", {
+  fetch(`${apiUrl}/boards`, {
     "method": "POST",
     "headers": {
       "Content-Type": "application/json",
@@ -119,7 +119,6 @@ saveBoard.addEventListener('submit', (event) => {
 
   saveBoardForm.reset()
 })
-
 
 
 /////////////////////////////////////////HIDE FORM////////////////////////
@@ -152,7 +151,7 @@ savedBoards.addEventListener("click", (event) => {
 
 
   if (event.target.classList.contains("saved")){
-    fetch("http://localhost:3000/boards")
+    fetch(`${apiUrl}/boards`)
       .then(resp => resp.json())
       .then(boards => {
         clicked = boards.data.find(board => board.id === event.target.dataset.id).attributes.urls
@@ -166,12 +165,12 @@ savedBoards.addEventListener("click", (event) => {
 
     let updatedLikes = likesText += 1
     console.log(event.target)
-    fetch(`http://localhost:3000/boards/${event.target.dataset.id}`, {
+    fetch(`${apiUrl}/boards/${event.target.dataset.id}`, {
       method: "PATCH",
       headers: {
         'Content-Type' : "application/json",
         'Accept': "application/json",
-        'Access-Control-Allow-Origin': "http://localhost:3000"
+        'Access-Control-Allow-Origin': "http://localhost:3000/boards"
       },
       body: JSON.stringify({likes: updatedLikes})
     })
