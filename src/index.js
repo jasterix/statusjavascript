@@ -43,11 +43,14 @@ const createTile = (code, description) => {
 }
 
 //////////////////////////////////////CREATE TILE TEMPLATES
+// if (statusCodes) {
+
 statusCodes.forEach(statusCode => {
   let code = statusCode.split(" ")[0]
   let description = statusCode.split(" ").slice(1).join(" ")
     imgDiv.innerHTML += createTile(code, description)
 })
+// }
 
 
 ////////////////////////////////FETCH GIFS FROM GIPHY FOR EACH STATUS CODE
@@ -67,15 +70,14 @@ search.forEach(statusCode => {
   })
 })
 
-fetch("http://localhost:3000/boards")
 // fetch(`${apiUrl}/boards`)
-  .then(resp => resp.json())
-  .then(boards => {
-    let new_arr = boards.data
-    new_arr.forEach(board => {
-      savedBoards.innerHTML = createSavedBoardsLi(board) + savedBoards.innerHTML
-    })
-  })
+//   .then(resp => resp.json())
+//   .then(boards => {
+//     let new_arr = boards.data
+//     new_arr.forEach(board => {
+//       savedBoards.innerHTML = createSavedBoardsLi(board) + savedBoards.innerHTML
+//     })
+//   })
 
 ////Save your board event listener
 saveBoard.addEventListener('submit', (event) => {
@@ -111,9 +113,11 @@ saveBoard.addEventListener('submit', (event) => {
     <a href="#"><li class="saved" data-id="${board.id}" >${board.name}</li></a><button class="like-btn" style="background-color: transparent; border: none;" data-id="${board.id}">${board.likes} 💜 </button>
     </h3>
   ` + savedBoards.innerHTML
-    } else {
-      alert("thou shall not pass, chooseth another name")
     }
+    else {
+
+  alert("thou hath chosen a strong name")
+    // }
 
   })
 
@@ -143,6 +147,7 @@ saveButton.addEventListener('click', () => {
   }
 })
 
+if (savedBoards) {
 savedBoards.addEventListener("click", (event) => {
   let likeButton = event.target
   let images = document.querySelectorAll(".medium")
@@ -180,6 +185,7 @@ savedBoards.addEventListener("click", (event) => {
   })
 }
 })
+}
 
 //-------------------------------CLICK TO CHANGE GIF
 tileContainer.addEventListener("click", (event) => {
