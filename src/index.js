@@ -7,10 +7,10 @@ const savedBoards = document.querySelector(".savedBoards")
 const tileContainer = document.querySelector(".cardContainer")
 let whole_board = []
 let addBoard = false;
-let urls
+let apiUrl= "https://statuslive.herokuapp.com/"
 
 function displaySaved(){
-  fetch("http://localhost:3000/boards")
+  fetch(`apiUrl/boards`)
     .then(resp => resp.json())
     .then(boards => {
       let new_arr = boards.data
