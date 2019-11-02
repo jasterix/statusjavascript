@@ -7,17 +7,33 @@ html {
   height: 800px;
   display: flex;
 }
-.purple.card {
-  min-width: 200px;
+@media screen and (min-width: 801px) {
+    .card {
+      min-width: 250px;
+      /* margin: auto; */
+      /* padding: auto; */
+    }
+    .ui.medium.image {
+      min-width: 200px;
+      height: 300px;
+      font-size: 1rem;
+    }
+
+}
+@media screen and (max-width: 800px) {
+    .card {
+      min-width: 60%;
+      margin: auto;
+    }
+    .ui.medium.image {
+    min-width: 300px;
+      height: 300px;
+      font-size: 1rem;
+    }
+
 }
 
-.ui.medium.image {
-  width: 300px;
-  height: 300px;
-  /* margin-left: auto;
-  margin-right: auto; */
-  font-size: 1rem;
-}
+
 
 */ .saveBoard-container {
   background-color: red;
