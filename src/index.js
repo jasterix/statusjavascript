@@ -5,9 +5,32 @@ const saveBoard = document.querySelector(".saveBoard-container")
 const saveBoardForm = document.querySelector(".save-board-form")
 const savedBoards = document.querySelector(".savedBoards")
 const tileContainer = document.querySelector(".cardContainer")
+const subtitle = document.querySelector(".subtitle")
 let whole_board = []
 let addBoard = false;
 let apiUrl= "https://statuslive.herokuapp.com/"
+
+function loading(){
+  return (`<p class="stillLoading" style="color: red;"> (loading...)</p>`)
+}
+subtitle.addEventListener('click', ()=> {
+  console.log("clicked")})
+if (document.readyState === "loading") {
+  subtitle.innerHTML += loading()
+}
+
+switch (document.readyState) {
+  case "loading":
+    console.log("The document is still loading.")
+    break;
+  case "interactive":
+    console.log("The document has finished loading. We can now access the DOM elements. But sub-resources such as images, stylesheets and frames are still loading.")
+    break;
+  case "complete":
+    // The page is fully loaded.
+    console.log("The first CSS rule is: " + document.styleSheets[0].cssRules[0].cssText);
+    break;
+}
 
 function displaySaved(){
   fetch(`${apiUrl}/boards`)
@@ -197,7 +220,6 @@ tileContainer.addEventListener("click", (event) => {
     let target = document.querySelector(`#status-${code}`)
 
     let num = getRandomInt()
-    console.log(num);
     fetch(`https://api.giphy.com/v1/gifs/search?api_key=HDgQlOddDbNfFqqzsbHvWi17CPZ6X4JP&q=${description}&limit=1&offset=${num}&rating=G&lang=en`)
       .then(response => response.json())
       .then(data => {
