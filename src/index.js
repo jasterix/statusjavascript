@@ -10,27 +10,35 @@ let whole_board = []
 let addBoard = false;
 let apiUrl= "https://statuslive.herokuapp.com/"
 
-function loading(){
-  return (`<p class="stillLoading" style="color: red;"> (loading...)</p>`)
-}
-subtitle.addEventListener('click', ()=> {
-  console.log("clicked")})
-if (document.readyState === "loading") {
-  subtitle.innerHTML += loading()
-}
-
-switch (document.readyState) {
-  case "loading":
-    console.log("The document is still loading.")
-    break;
-  case "interactive":
-    console.log("The document has finished loading. We can now access the DOM elements. But sub-resources such as images, stylesheets and frames are still loading.")
-    break;
-  case "complete":
-    // The page is fully loaded.
-    console.log("The first CSS rule is: " + document.styleSheets[0].cssRules[0].cssText);
-    break;
-}
+// function loading(){
+//   return (`<p class="stillLoading" style="color: red;"> (loading...)</p>`)
+// }
+//
+// document.onreadystatechange = function () {
+//
+//  document.addEventListener('readystatechange', function() {
+//    console.log("loaded")
+//  })
+//
+// console.log(document.readyState)
+// subtitle.addEventListener('click', ()=> {
+//   console.log("clicked")})
+// if (document.readyState === "loading") {
+//   subtitle.innerHTML += loading()
+// }
+//
+// switch (document.readyState) {
+//   case "loading":
+//     console.log("The document is still loading.")
+//     break;
+//   case "interactive":
+//     console.log("The document has finished loading. We can now access the DOM elements. But sub-resources such as images, stylesheets and frames are still loading.")
+//     break;
+//   case "complete":
+//     // The page is fully loaded.
+//     console.log("The first CSS rule is: " + document.styleSheets[0].cssRules[0].cssText);
+//     break;
+// }
 
 function displaySaved(){
   fetch(`${apiUrl}/boards`)
