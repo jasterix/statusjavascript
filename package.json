@@ -1,0 +1,26 @@
+{
+  "name": "JSFrontend",
+  "version": "1.0.0",
+  "description": "<h1 align=\"center\">Status</h1> <h3 align=\"center\">Status is a Giphy API that generates GIFs for assigned HTTP status codes</h3>",
+  "main": "index.js",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "browserify": "^16.5.0",
+    "jest": "^25.1.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jasterix/statusjavascript.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jasterix/statusjavascript/issues"
+  },
+  "homepage": "https://github.com/jasterix/statusjavascript#readme"
+}
