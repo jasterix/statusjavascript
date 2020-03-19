@@ -1,5 +1,5 @@
+(function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
 module.exports = functionToTest;
-const axios = require("axios");
 
 function functionToTest(shouldPass) {
   return new Promise((resolve, reject) => {
@@ -13,7 +13,7 @@ function functionToTest(shouldPass) {
   });
 }
 
-// //
+// // const axios = require("axios");
 
 // const imgDiv = document.querySelector(".img-list");
 // const submitButton = document.querySelector("input.submit");
@@ -392,3 +392,21 @@ function functionToTest(shouldPass) {
 // // Get the scrollbar width
 // var scrollbarWidth = scrollDiv.offsetWidth - scrollDiv.clientWidth;
 // document.body.removeChild(scrollDiv);
+
+},{}],2:[function(require,module,exports){
+// const chaiAsPromised = require("chai-as-promised");
+// chai.use(chaiAsPromised);
+
+const functionToTest = require("./app.js");
+
+describe("[sample unit]", function() {
+  it("should pass functionToTest with true input", function() {
+    return expect(functionToTest(true)).to.eventually.be.equal("Good");
+  });
+
+  it("should fail functionToTest with false input", function() {
+    return expect(functionToTest(false)).to.eventually.be.rejectedWith("Bad");
+  });
+});
+
+},{"./app.js":1}]},{},[2]);
